@@ -48,7 +48,7 @@ end
 })
 
 Tab:AddToggle({
-	Name = "Easy Bones",
+	Name = "Ez Bones",
 	Default = false,
 	Callback = function(Value)
 		_G.autoEasyBones = Value
@@ -56,13 +56,13 @@ Tab:AddToggle({
 local args = {
     [1] = "CollectDrop",
     [2] = {
-        [1] = 8,
-        [2] = 181440
+        [1] = 11,
+        [2] = 13122000
     }
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
- end
+end
 	end    
 })
 
