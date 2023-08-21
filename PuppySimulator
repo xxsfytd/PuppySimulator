@@ -1,0 +1,97 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Puppy Tycoon", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddLabel("Frogs are W")
+
+local Tab = Window:MakeTab({
+	Name = "Auto",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Auto Grind"
+})
+
+Tab:AddToggle({
+	Name = "Auto Buy Puppy",
+	Default = false,
+	Callback = function(Value)
+		_G.autoPuppy = Value
+		while _G.autoPuppy and wait() do
+		local args = {
+    [1] = "BuyDropper"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Auto Merge",
+	Default = false,
+	Callback = function(Value)
+		_G.autoMerge = Value
+		while _G.autoMerge and wait() do
+		local args = {
+    [1] = "MergeDropper"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Easy Bones",
+	Default = false,
+	Callback = function(Value)
+		_G.autoEasyBones = Value
+		while _G.autoEasyBones and wait() do
+local args = {
+    [1] = "CollectDrop",
+    [2] = {
+        [1] = 7,
+        [2] = 43200
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Auto Buy Rate",
+	Default = false,
+	Callback = function(Value)
+	_G.autoBuyRate = Value
+	while _G.autoBuyRate and wait() do
+	local args = {
+    [1] = "BuyRate"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Auto Deposit",
+	Default = false,
+	Callback = function(Value)
+		_G.autoDeposit = Value
+		while _G.autoDeposit and wait() do
+		local args = {
+    [1] = "DepositDrops"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+end
+	end    
+})
