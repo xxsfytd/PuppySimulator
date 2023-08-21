@@ -108,6 +108,6 @@ local Section = Tab:AddSection({
 Tab:AddButton({
 	Name = "Win Obby",
 	Callback = function()
-      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7, 53, 25)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7, 53, 25)
   	end    
 })
