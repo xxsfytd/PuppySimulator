@@ -96,6 +96,21 @@ end
 	end    
 })
 
+Tab:AddToggle({
+	Name = "Auto Buy Max Upgrades",
+	Default = false,
+	Callback = function(Value)
+		_G.autoBuyMaxUpgrades = Value
+		while _G.autoBuyMaxUpgrades and wait(10) do
+		local args = {
+    [1] = "BuyMaxDroppers"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+end
+	end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Boost",
 	Icon = "rbxassetid://4483345998",
