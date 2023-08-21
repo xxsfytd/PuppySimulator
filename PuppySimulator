@@ -126,3 +126,7 @@ Tab:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7, 53, 25)
   	end    
 })
+
+
+
+OrionLib:Init()
