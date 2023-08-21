@@ -95,3 +95,16 @@ game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild(
 end
 	end    
 })
+
+local Tab = Window:MakeTab({
+	Name = "Boost",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Win Obby",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7, 53, 25)
+  	end    
+})
