@@ -111,6 +111,21 @@ end
 	end    
 })
 
+Tab:AddToggle({
+	Name = "Auto Rebirth",
+	Default = false,
+	Callback = function(Value)
+		_G.autoRebirth = Value
+		while _G.autoRebirth and wait(1) do
+		local args = {
+    [1] = "RequestRebirth"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+end
+	end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Boost",
 	Icon = "rbxassetid://4483345998",
