@@ -56,12 +56,14 @@ Tab:AddToggle({
 local args = {
     [1] = "CollectDrop",
     [2] = {
-        [1] = 11,
-        [2] = 13122000
+        [1] = 12,
+        [2] = 104976000,
+        [3] = true
     }
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
 end
 	end    
 })
