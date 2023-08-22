@@ -63,7 +63,6 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
 end
 	end    
 })
@@ -126,22 +125,6 @@ Tab:AddToggle({
 game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
 end
 	end    
-})
-
-local Tab = Window:MakeTab({
-	Name = "Boost",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-local Section = Tab:AddSection({
-	Name = "Boost"
-})
-
-Tab:AddButton({
-	Name = "Win Obby",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7, 53, 25)
-  	end    
 })
 
 
